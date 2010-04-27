@@ -179,8 +179,8 @@ public class BigInteger
                 dataLength = 1;
         }
 
-        public const BigInteger ONE = new BigInteger(1);
-        public const BigInteger ZERO = new BigInteger(0);
+        public static BigInteger ONE = new BigInteger(1);
+        public static BigInteger ZERO = new BigInteger(0);
 
 
         //***********************************************************************
@@ -3258,7 +3258,7 @@ public class BigInteger
         }
 
 
-
+        /*
         public static void Main(string[] args)
         {
                 // Known problem -> these two pseudoprimes passes my implementation of
@@ -3332,5 +3332,6 @@ public class BigInteger
                 //Console.WriteLine(System.Environment.TickCount - dwStart);
 
         }
+        */
 
 }
