@@ -1,4 +1,5 @@
-See http://www.thelowlyprogrammer.com/2010/04/indexing-and-enumerating-subsets-of.html for a description and analysis of the algorithm implemented here. 
+See http://www.thelowlyprogrammer.com/2010/04/indexing-and-enumerating-subsets-of.html for a description and analysis of the algorithm implemented here.
 
 C# port kindly provided by Ligon Liu.
 Python port kindly provided by Josiah Carlson.
+Javascript and PHP ports kindly provided by Richard Lyon: http://richardlyon.co.uk
