@@ -72,7 +72,7 @@ class EnumeratedSubsets(object):
                     b = self.generateSubset(l, k, i)
                     if b is None:
                         break
-                    print "%i %i %s: %s"%(l, k, i, b)
+                    print("%i %i %s: %s"%(l, k, i, b))
                     i += 1
 
         i = 0
@@ -80,14 +80,39 @@ class EnumeratedSubsets(object):
             b = self.generateSubset(25, 24, i)
             if b is None:
                 break
-            print "%i %i %s: %s"%(25, 24, i, b)
+            print("%i %i %s: %s"%(25, 24, i, b))
             i += 1
 
         self.precacheChoose(10000, 12)
         i = 160000
         b = self.generateSubset(100, 3, i)
-        print "%i %i %s: %s"%(100, 3, i, b)
+        print("%i %i %s: %s"%(100, 3, i, b))
 
         i = 160000000000000000000000000000
         b = self.generateSubset(10000, 12, i)
-        print "%i %i %s: %s"%(10000, 12, i, b)
+        print("%i %i %s: %s"%(10000, 12, i, b))
+
+    def invert(self,n,l):
+        k=len(l)
+        assert(k<=n) #assert subset of {1,...,n}
+        assert(k==len(set(l)))#assert unique elements
+        assert(max(l)<n)
+        l.sort()
+        if k==1:
+            return l[0]
+        elif k==0:
+            return 0
+        else:
+            return self.choose(n,k)-self.choose(n-l[0],k)+self.invert(n-l[0]-1,list(map(lambda x: x-l[0]-1,l[1:])))
+
+
+if __name__=='__main__':
+    a = EnumeratedSubsets()
+    max_n = 10
+    for n in range(1,max_n):
+        for k in range(1,n+1):
+            for i in range(0,a.choose(n,k)):
+                l= a.generateSubset(n,k,i)
+                assert(a.invert(n,l)==i)
+    else:
+        print("Passed all tests")
