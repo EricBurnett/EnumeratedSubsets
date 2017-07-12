@@ -115,7 +115,7 @@ class EnumeratedSubsets(object):
 if __name__=='__main__':
 	a = EnumeratedSubsets()
 	max_n = 15
-	for n in range(8,max_n):
+	for n in range(1,max_n):
 		for k in range(1,n+1):
 			for i in range(0,a.choose(n,k)):
 				l= a.generateSubset(n,k,i)
